@@ -35,7 +35,7 @@ This is the project root api refference.
 ```bash
 🚀 Login User
   {
-    "email":"anondokumar95@gmail.com",
+    "email":"tudo.example@example.com",
     "password":"password"
   }
 ```
