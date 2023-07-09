@@ -34,6 +34,13 @@ app.use('/api/v1', user);
 app.use('/api/v1', payment);
 app.use('/api/v1', order);
 
+app.use('/', (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: 'Server is Running 🚀',
+    });
+});
+
 // app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 // app.get("*", (req, res) => {
