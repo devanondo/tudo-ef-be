@@ -1,88 +1,88 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Please Enter Product Name"],
-    trim: true,
-  },
-  description: {
-    type: String,
-    required: [true, "Please Enter Product Description"],
-  },
-  price: {
-    type: Number,
-    required: [true, "Please Enter Product Price"],
-    maxLength: [8, "Price cannot exceed 8 characters"],
-  },
-  ratings: {
-    type: Number,
-    default: 0,
-  },
-  images: [
-    {
-      public_id: {
+    name: {
         type: String,
-        required: true,
-      },
-      url: {
-        type: String,
-        required: true,
-      },
+        required: [true, 'Please Enter Product Name'],
+        trim: true,
     },
-  ],
-  category: {
-    type: String,
-    required: [true, "Please Enter Product Category"],
-  },
-  subCategory: {
-    type: String,
-    required: [true, "Please Enter Product Category"],
-  },
-  stock: {
-    type: Number,
-    required: [true, "Please Enter Product Stock"],
-    maxLength: [4, "Stock cannot exceed 4 characters"],
-    default: 1,
-  },
-  numOfReviews: {
-    type: Number,
-    default: 0,
-  },
-  reviews: [
-    {
-      user: {
-        type: mongoose.Schema.ObjectId,
-        ref: "User",
-        required: true,
-      },
-      image: {
+    description: {
         type: String,
-        default: "https://i.ibb.co/F5Q6MXx/avatar.png",
-      },
-      name: {
-        type: String,
-        required: true,
-      },
-      rating: {
+        required: [true, 'Please Enter Product Description'],
+    },
+    price: {
         type: Number,
-        required: true,
-      },
-      comment: {
-        type: String,
-        required: true,
-      },
+        required: [true, 'Please Enter Product Price'],
+        maxLength: [8, 'Price cannot exceed 8 characters'],
     },
-  ],
-  user: {
-    type: mongoose.Schema.ObjectId,
-    ref: "User",
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
+    ratings: {
+        type: Number,
+        default: 0,
+    },
+    images: [
+        {
+            public_id: {
+                type: String,
+                required: true,
+            },
+            url: {
+                type: String,
+                required: true,
+            },
+        },
+    ],
+    category: {
+        type: String,
+        required: [true, 'Please Enter Product Category'],
+    },
+    subCategory: {
+        type: String,
+        required: [true, 'Please Enter Product Category'],
+    },
+    stock: {
+        type: Number,
+        required: [true, 'Please Enter Product Stock'],
+        maxLength: [4, 'Stock cannot exceed 4 characters'],
+        default: 1,
+    },
+    numOfReviews: {
+        type: Number,
+        default: 0,
+    },
+    reviews: [
+        {
+            user: {
+                type: mongoose.Schema.ObjectId,
+                ref: 'User',
+                required: true,
+            },
+            image: {
+                type: String,
+                default: 'https://i.ibb.co/F5Q6MXx/avatar.png',
+            },
+            name: {
+                type: String,
+                required: true,
+            },
+            rating: {
+                type: Number,
+                required: true,
+            },
+            comment: {
+                type: String,
+                required: true,
+            },
+        },
+    ],
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
-module.exports = mongoose.model("Product", productSchema);
+module.exports = mongoose.model('Product', productSchema);
